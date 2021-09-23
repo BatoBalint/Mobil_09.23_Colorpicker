@@ -14,17 +14,21 @@
         android:thumbTint="#F00"
         android:paddingTop="10sp"
         android:paddingBottom="10sp"
+        android:max="255"
+        android:min="0"
         />
 
     <SeekBar
+        android:id="@+id/seek_bar_green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/seek_bar_green"
         android:layout_below="@+id/seek_bar_red"
-        android:progressTint="#0F0"
-        android:thumbTint="#0F0"
+        android:max="255"
+        android:min="0"
         android:paddingTop="10sp"
-        android:paddingBottom="10sp"/>
+        android:paddingBottom="10sp"
+        android:progressTint="#0F0"
+        android:thumbTint="#0F0" />
 
     <SeekBar
         android:id="@+id/seek_bar_blue"
@@ -34,7 +38,9 @@
         android:progressTint="#00F"
         android:thumbTint="#00F"
         android:paddingTop="10sp"
-        android:paddingBottom="10sp"/>
+        android:paddingBottom="10sp"
+        android:max="255"
+        android:min="0"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -47,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/color_text_view"
-            android:text="(0, 0, 0)"
+            android:text="(0,0,0)"
             android:textSize="30sp"
             android:textColor="@color/white"
             android:layout_centerInParent="true"
