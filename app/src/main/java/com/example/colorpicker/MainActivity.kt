@@ -1,5 +1,6 @@
 package com.example.colorpicker
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Layout
@@ -25,7 +26,11 @@ class MainActivity : AppCompatActivity() {
         Init()
         RedSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-
+                red = RedSeekBar.progress
+                TextView.setText("(" + red.toString() + ", " + green.toString() + ", " + blue.toString() + ")")
+                ColorLayout.setBackgroundColor(Color.rgb(red, green, blue))
+                if (red + green + blue > 300) TextView.setTextColor(Color.BLACK)
+                else TextView.setTextColor(Color.WHITE)
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -39,7 +44,11 @@ class MainActivity : AppCompatActivity() {
 
         GreenSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-
+                green = GreenSeekBar.progress
+                TextView.setText("(" + red.toString() + ", " + green.toString() + ", " + blue.toString() + ")")
+                ColorLayout.setBackgroundColor(Color.rgb(red, green, blue))
+                if (red + green + blue > 300) TextView.setTextColor(Color.BLACK)
+                else TextView.setTextColor(Color.WHITE)
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -53,7 +62,11 @@ class MainActivity : AppCompatActivity() {
 
         BlueSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-
+                blue = BlueSeekBar.progress
+                TextView.setText("(" + red.toString() + ", " + green.toString() + ", " + blue.toString() + ")")
+                ColorLayout.setBackgroundColor(Color.rgb(red, green, blue))
+                if (red + green + blue > 300) TextView.setTextColor(Color.BLACK)
+                else TextView.setTextColor(Color.WHITE)
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -69,8 +82,8 @@ class MainActivity : AppCompatActivity() {
 
     fun Init() {
         RedSeekBar = findViewById(R.id.seek_bar_red)
-        GreenSeekBar = findViewById(R.id.seek_bar_red)
-        BlueSeekBar = findViewById(R.id.seek_bar_red)
+        GreenSeekBar = findViewById(R.id.seek_bar_green)
+        BlueSeekBar = findViewById(R.id.seek_bar_blue)
         ColorLayout = findViewById(R.id.color_layout)
         TextView = findViewById(R.id.color_text_view)
     }
